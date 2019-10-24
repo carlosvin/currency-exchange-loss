@@ -1,8 +1,9 @@
 <script>
 	import Header from './Header.svelte';
 	import FetchRates from './FetchRates.svelte';
-	import FetchCurrencies from './FetchCurrencies.svelte';
+	import { currencies } from './currencies';
 	import SelectCurrencies from './SelectCurrencies.svelte';
+
 	export let name;
 	let selectedFrom;
 	let selectedTo;
@@ -24,7 +25,6 @@
 
 <Header title="Currency loss"/>
 <main class="main">
-<FetchCurrencies let:currencies>
 	{#if currencies}
 		<SelectCurrencies {currencies} bind:selected={selectedFrom}/>
 		<SelectCurrencies {currencies} bind:selected={selectedTo}/>
@@ -48,6 +48,4 @@
 		{/if}
 
 	{/if}
-	
-</FetchCurrencies>
 </main>
