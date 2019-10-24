@@ -1,2 +1,2 @@
-# currency-loss
-PWA to calculate estimated currency loss
+# Currency Exchange Loss Calculation
+PWA to calculate estimated currency loss developed in Svelte.
