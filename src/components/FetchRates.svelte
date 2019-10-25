@@ -1,6 +1,6 @@
 <script>
     import Fetch from "./Fetch.svelte";
-    import { readRates, writeRates } from './ratesStorage';
+    import { readRates, writeRates } from '../ratesStorage';
 
     let rates = readRates();
     export let baseCurrency;

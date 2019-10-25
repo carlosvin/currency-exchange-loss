@@ -1,10 +1,9 @@
 <script>
-	import Header from './Header.svelte';
-	import FetchRates from './FetchRates.svelte';
-	import { currencies } from './currencies';
-	import SelectCurrencies from './SelectCurrencies.svelte';
+	import Header from '../components/Header.svelte';
+	import FetchRates from '../components/FetchRates.svelte';
+	import { currencies } from '../currencies';
+	import SelectCurrencies from '../components/SelectCurrencies.svelte';
 
-	export let name;
 	let selectedFrom;
 	let selectedTo;
 	let amountToChange;
