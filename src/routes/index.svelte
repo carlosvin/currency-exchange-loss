@@ -19,6 +19,7 @@
 <Header title="Currency loss"/>
 <main class="main">
 	{#if currencies}
+		<form>
 		<SelectCurrencies {currencies} bind:selected={selectedFrom}/>
 		<SelectCurrencies {currencies} bind:selected={selectedTo}/>
 		<input type="number" min="0" placeholder="Rate offered" bind:value={rateOffered}/>
@@ -39,6 +40,6 @@
 				<p>Current rate: {rates[selectedTo]}</p>
 			</FetchRates>
 		{/if}
-
+		</form>
 	{/if}
 </main>
