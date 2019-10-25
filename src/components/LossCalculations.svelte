@@ -40,6 +40,7 @@ table {
                         .format(amountLost)}/>
             
             <RowPair 
+                important
                 description='You are lossing' 
                 number={new Intl.NumberFormat(undefined, 
                         { style: 'currency', currency: baseCurrency })
