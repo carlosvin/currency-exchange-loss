@@ -3,6 +3,7 @@
 	import FetchRates from '../components/FetchRates.svelte';
 	import { currencies } from '../currencies';
 	import SelectCurrencies from '../components/SelectCurrencies.svelte';
+	import LossCalculations from '../components/LossCalculations.svelte';
 
 	let selectedFrom;
 	let selectedTo;
@@ -27,17 +28,13 @@
 			<FetchRates baseCurrency={selectedFrom} targetCurrencies={Object.keys(currencies)}
 				let:rates>
 				<input type="number" bind:value={amountToChange} placeholder="Amount to change" min="0"/>
-				{#if amountToChange}
-				<p>Expected amount: {rates[selectedTo] * amountToChange} {selectedTo}</p>
-					{#if rateOffered}
-						<p>What you get: {rateOffered * amountToChange} {selectedTo}</p>
-						<p>You are lossing {(rates[selectedTo] - rateOffered) * amountToChange} {selectedTo}
-						= {((rates[selectedTo] - rateOffered) * amountToChange)/ rates[selectedTo]} {selectedFrom}
-						</p>
-
-					{/if}
-				{/if}
-				<p>Current rate: {rates[selectedTo]}</p>
+				<LossCalculations 
+					rateExpected={rates[selectedTo]}
+					rateOffered={rateOffered}
+					amountToChange={amountToChange}
+					targetCurrency={selectedTo}
+					baseCurrency={selectedFrom}
+					/>
 			</FetchRates>
 		{/if}
 		</form>
