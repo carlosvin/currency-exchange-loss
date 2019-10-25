@@ -11,12 +11,6 @@
 </script>
 
 <style>
-	:global(body) {
-		margin: 0;
-		padding: 0;
-		clear: both;
-	}
-
 	.main {
 		margin: 1rem;
 	}
