@@ -3,12 +3,6 @@ body {
 	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-form {
-	display: flex;
-	flex-flow: wrap;
-	justify-content: space-evenly;
-}
-
 form > input, form > select {
 	margin: 0.5rem;
 	padding: 0.2rem;
