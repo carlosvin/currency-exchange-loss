@@ -17,8 +17,9 @@ table {
 </style>
 
 <table>
-    <RowPair description='Current rate' number={rateExpected.toFixed(3)}/>
-   
+    {#if rateExpected}
+        <RowPair description='Current rate' number={rateExpected.toFixed(3)}/>
+    {/if}
     {#if amountToChange}
         <RowPair 
             description='Expected amount' 
