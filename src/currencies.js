@@ -9,7 +9,7 @@ export const currencies = {
     "AUD": "Australian Dollar",
     "AWG": "Aruban Florin",
     "AZN": "Azerbaijani Manat",
-    "BAM": "Bosnia-Herzegovina Convertible Mark",
+    "BAM": "Bosnia-Herzegovina C. Mark",
     "BBD": "Barbadian Dollar",
     "BDT": "Bangladeshi Taka",
     "BGN": "Bulgarian Lev",
