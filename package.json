@@ -1,6 +1,7 @@
 {
   "name": "currency-exchange-loss",
   "description": "Currency Exchange Loss Calculator",
+  "private": true,
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
