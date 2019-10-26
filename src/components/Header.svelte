@@ -10,8 +10,12 @@
         background-color: darkmagenta;
         color: ghostwhite;
         position: sticky;
-        padding: 1rem;
-	}
+    }
+    
+    h1 {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
 </style>
 
 <header>
