@@ -1,6 +1,16 @@
 <!doctype html>
 <html>
+
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KVE3T8RB21"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-KVE3T8RB21');
+	</script>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1.0'>
 	<meta name='theme-color' content='darkmagenta'>
@@ -20,6 +30,7 @@
 	     the current page has one -->
 	%sapper.head%
 </head>
+
 <body>
 	<!-- The application will be rendered inside this element,
 	     because `src/client.js` references it -->
@@ -30,4 +41,5 @@
 	     initialise the router -->
 	%sapper.scripts%
 </body>
+
 </html>
