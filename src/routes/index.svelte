@@ -34,10 +34,10 @@
 <Header title="Currency loss"/>
 <main class="main">
 	<form>
-		<SelectCurrencies {currencies} bind:selected={selectedFrom}/>
-		<SelectCurrencies {currencies} bind:selected={selectedTo}/>
-		<input type="number" min="0" bind:value={rateOffered} placeholder="Rate offered" />
-		<input type="number" min="0" bind:value={amountToChange} placeholder="Amount to change"/>
+		<SelectCurrencies {currencies} bind:selected={selectedFrom} name="from"/>
+		<SelectCurrencies {currencies} bind:selected={selectedTo} name="to"/>
+		<input name="rate-offered" type="number" min="0" bind:value={rateOffered} placeholder="Rate offered" />
+		<input name="amount-to-change" type="number" min="0" bind:value={amountToChange} placeholder="Amount to change"/>
 	</form>
 	{#if selectedFrom && selectedFrom !== selectedTo}
 		<div class='calculatedTable'>
