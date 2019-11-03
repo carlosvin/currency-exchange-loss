@@ -23,11 +23,16 @@
 		display: flex;
 		flex-flow: wrap;
 		justify-content: space-evenly;
-		justify-items: center;
 	}
 	.calculatedTable {
 		display: flex;
 		justify-content: center;
+	}
+	label {
+		margin: 2%;
+		font-size: 0.7rem;
+		display: flex;
+		flex-direction: column;
 	}
 </style>
 
