@@ -34,6 +34,16 @@
 		display: flex;
 		flex-direction: column;
 	}
+	footer {
+		position: fixed;
+		width: 100%;
+		bottom: 2%;
+		display: flex;
+		flex-flow: wrap;
+		justify-items: center;
+		justify-content: space-around;
+		font-size: smaller;
+	}
 </style>
 
 <Header title="Currency loss"/>
@@ -65,3 +75,7 @@
 		</div>
 	{/if}
 </main>
+<footer>
+	<a href="https://github.com/carlosvin/currency-exchange-loss/issues">Send feedback</a>
+	<a href="https://github.com/carlosvin/currency-exchange-loss">Source at Github</a>
+</footer>
