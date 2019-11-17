@@ -1,6 +1,6 @@
 <script>
 	import Header from '../components/Header.svelte';
-	import FetchRates from '../components/FetchRates.svelte';
+	import { fetchRates } from '../fetch';
 	import { currencies } from '../currencies';
 	import SelectCurrencies from '../components/SelectCurrencies.svelte';
 	import LossCalculations from '../components/LossCalculations.svelte';
@@ -63,15 +63,22 @@
 		</label>
 	</form>
 	{#if selectedFrom && selectedFrom !== selectedTo}
+		{@debug selectedFrom,  selectedTo}
 		<div class='calculatedTable'>
-			<FetchRates baseCurrency={selectedFrom} targetCurrencies={Object.keys(currencies)} let:rates>
+			{#await fetchRates(selectedFrom, Object.keys(currencies))}
+				<p>...fetching</p>
+			{:then rates}
+				{@debug rates}
 				<LossCalculations 
 					rateExpected={rates[selectedTo]}
 					rateOffered={rateOffered}
 					amountToChange={amountToChange}
 					targetCurrency={selectedTo}
 					baseCurrency={selectedFrom} />
-			</FetchRates>
+			{:catch error}
+				<p style="color: red">{error.message}</p>
+			{/await}
+				
 		</div>
 	{/if}
 </main>
