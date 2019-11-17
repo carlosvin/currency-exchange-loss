@@ -1,4 +1,3 @@
-import { writeRates } from './ratesStorage';
 
 export function getUrl (baseUrl, params) {
     if (baseUrl) {
@@ -39,10 +38,7 @@ export async function fetchRates(baseCurrency, targetCurrencies) {
         if (response.ok) {
             const data = await response.json();
             if (data && data.rates) {
-                const rates = data.rates;
-                // TODO use service worker cache instead of manually writing
-                writeRates(rates);
-                return rates;
+                return data.rates;
             }
         }
         throw new Error(`Error fetching ${url} > ${response.status}`);
