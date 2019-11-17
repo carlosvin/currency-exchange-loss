@@ -65,7 +65,7 @@
 	{#if selectedFrom && selectedFrom !== selectedTo}
 		{@debug selectedFrom,  selectedTo}
 		<div class='calculatedTable'>
-			{#await fetchRates(selectedFrom, Object.keys(currencies))}
+			{#await fetchRates(selectedFrom)}
 				<p>...fetching</p>
 			{:then rates}
 				{@debug rates}
