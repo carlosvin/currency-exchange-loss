@@ -1,7 +1,6 @@
 <script>
 	import Header from '../components/Header.svelte';
 	import { fetchRates } from '../fetch';
-	import { currencies } from '../currencies';
 	import SelectCurrencies from '../components/SelectCurrencies.svelte';
 	import LossCalculations from '../components/LossCalculations.svelte';
 
@@ -50,10 +49,10 @@
 <main class="main">
 	<form>
 		<label>From
-			<SelectCurrencies {currencies} bind:selected={selectedFrom} name="from"/>
+			<SelectCurrencies bind:selected={selectedFrom} name="from"/>
 		</label>
 		<label>To
-			<SelectCurrencies {currencies} bind:selected={selectedTo} name="to"/>
+			<SelectCurrencies bind:selected={selectedTo} name="to"/>
 		</label>
 		<label>Rate offered
 			<input name="rate-offered" type="number" min="0" bind:value={rateOffered} placeholder="Rate offered" />

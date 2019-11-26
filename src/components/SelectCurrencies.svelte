@@ -1,13 +1,12 @@
 <script>
-    export let currencies = [];
+	import { Currencies, CODES } from 'currencies-map';
+
     export let selected = 'EUR';
     export let name;
 </script>
 
-{#if currencies}
-    <select name={name} bind:value={selected}>
-        {#each Object.entries(currencies) as [code, name]}
-            <option value={code}>{name}</option>
-        {/each}	
-    </select>
-{/if}
+<select name={name} bind:value={selected}>
+    {#each CODES as code}
+        <option value={code}>{Currencies.names.get(code)}</option>
+    {/each}	
+</select>
