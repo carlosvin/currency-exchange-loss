@@ -3,11 +3,13 @@
 	import { fetchRates } from '../fetch';
 	import SelectCurrencies from '../components/SelectCurrencies.svelte';
 	import LossCalculations from '../components/LossCalculations.svelte';
+	import { Currencies } from 'currencies-map';
 
 	let selectedFrom;
 	let selectedTo;
 	let amountToChange;
 	let rateOffered;
+	const currencies = [...Currencies.names.entries()];
 </script>
 
 <style>
@@ -49,10 +51,10 @@
 <main class="main">
 	<form>
 		<label>From
-			<SelectCurrencies bind:selected={selectedFrom} name="from"/>
+			<SelectCurrencies {currencies} bind:selected={selectedFrom} name="from"/>
 		</label>
 		<label>To
-			<SelectCurrencies bind:selected={selectedTo} name="to"/>
+			<SelectCurrencies {currencies} bind:selected={selectedTo} name="to"/>
 		</label>
 		<label>Rate offered
 			<input name="rate-offered" type="number" min="0" bind:value={rateOffered} placeholder="Rate offered" />
