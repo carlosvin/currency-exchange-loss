@@ -959,10 +959,10 @@ cross-spawn@^6.0.5:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-currencies-map@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/currencies-map/-/currencies-map-3.1.1.tgz#590c94e99262ab5725ff3845209a1f98de731ac6"
-  integrity sha512-MoywXREvQJtL3ntLMrPPXmox85TnUvv/2WUspzfljZ/lWN2Y213yf+aW5Q86WhcdZaVI1NgzyPqMNDPVA3ohBA==
+currencies-map@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/currencies-map/-/currencies-map-3.1.2.tgz#0e29929fecc29287966e40781b46852e86e19c2a"
+  integrity sha512-AO7+YNq+QQnaTe+I3MK8GfmEnFjfHwjzT0zRvRLOSruDG2gEdgGFJN3qDd7SN6cxM0BShbKq1ug4EOBAuLcD0w==
 
 debug@2.6.9:
   version "2.6.9"
