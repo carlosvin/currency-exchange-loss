@@ -25,12 +25,15 @@
 		display: flex;
 		flex-flow: wrap;
 		justify-content: space-evenly;
+		justify-items: stretch;
 	}
 	.calculatedTable {
 		display: flex;
 		justify-content: center;
 	}
 	label {
+		min-width: 10rem;
+		width: 40%;
 		margin: 2%;
 		font-size: 0.7rem;
 		display: flex;
@@ -45,6 +48,12 @@
 		justify-items: center;
 		justify-content: space-around;
 		font-size: smaller;
+	}
+	input {
+		border: 1px solid #D8DBDF;
+		border-radius: 0.2rem;
+		height: 1.8rem;
+		padding-left: 0.4rem;
 	}
 </style>
 

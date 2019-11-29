@@ -6,4 +6,13 @@
     export let selected = undefined;
 </script>
 
-<Select inputAttributes={{name}} items={currencies} bind:selectedValue={selected} />
+<style>
+  .themed {
+    --borderRadius: 0.2rem;
+    --height: 1.8rem;
+  }
+</style>
+
+<div class='themed'>
+    <Select inputAttributes={{name}} items={currencies} bind:selectedValue={selected} />
+</div>
