@@ -14,5 +14,5 @@
 </style>
 
 <div class='themed'>
-    <Select inputAttributes={{name}} items={currencies} bind:selectedValue={selected} />
+    <Select inputAttributes={{name}} items={currencies} bind:selectedValue={selected} isClearable={false} />
 </div>
