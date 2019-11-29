@@ -9,7 +9,8 @@
 	let selectedTo;
 	let amountToChange;
 	let rateOffered;
-	const currencies = [...Currencies.names.entries()];
+
+	const currencies = [...Currencies.names.entries()].map(([value, label]) => ({value, label}));
 </script>
 
 <style>
@@ -63,23 +64,24 @@
 			<input name="amount-to-change" type="number" min="0" bind:value={amountToChange} placeholder="Amount to change"/>
 		</label>
 	</form>
-	{#if selectedFrom && selectedFrom !== selectedTo}
+	{#if selectedFrom && (selectedTo === undefined || selectedFrom.value !== selectedTo.value)}
 		{@debug selectedFrom,  selectedTo}
 		<div class='calculatedTable'>
-			{#await fetchRates(selectedFrom)}
+			{#await fetchRates(selectedFrom.value)}
 				<p>...fetching</p>
 			{:then rates}
 				{@debug rates}
-				<LossCalculations 
-					rateExpected={rates[selectedTo]}
-					rateOffered={rateOffered}
-					amountToChange={amountToChange}
-					targetCurrency={selectedTo}
-					baseCurrency={selectedFrom} />
+				{#if selectedTo}
+					<LossCalculations 
+						rateExpected={rates[selectedTo.value]}
+						rateOffered={rateOffered}
+						amountToChange={amountToChange}
+						targetCurrency={selectedTo.value}
+						baseCurrency={selectedFrom.value} />
+					{/if}
 			{:catch error}
 				<p style="color: red">{error.message}</p>
 			{/await}
-				
 		</div>
 	{/if}
 </main>

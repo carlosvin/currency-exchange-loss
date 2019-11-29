@@ -1,11 +1,9 @@
 <script>
-    export let selected = 'EUR';
-    export let name;
+    import Select from "svelte-select";
+
     export let currencies;
+    export let name;
+    export let selected = undefined;
 </script>
 
-<select name={name} bind:value={selected}>
-    {#each currencies as [code, name]}
-        <option value={code}>{name}</option>
-    {/each}	
-</select>
+<Select inputAttributes={{name}} items={currencies} bind:selectedValue={selected} />
